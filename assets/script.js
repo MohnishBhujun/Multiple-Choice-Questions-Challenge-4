@@ -11,11 +11,6 @@ var quizQuestions = [{
     correctAnswer: "Hyper Text Markup Language"
 },
 {
-    question: "Which tag is used to create a hyperlink in HTML?",
-    options: ["<a>", "<link>", "<href>", "<hyper>"],
-    correctAnswer: "<a>"
-},
-{
     question: "What does CSS stand for?",
     options: ["Cascading Style Sheets", "Creative Style Sheets", "Computer Style Sheets", "Colorful Style Sheets"],
     correctAnswer: "Cascading Style Sheets"
