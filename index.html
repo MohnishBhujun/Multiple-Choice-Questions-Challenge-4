@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="./Assets/images/quiz_icon_1.jpg">
+    <link rel="stylesheet" href="assets\style.css">
+    <title>WEB DEVELOPMENT QUIZ</title>
+</head>
+
+<body>
+    <!--Header Section-->
+    <!--Created a class inside the header section to display high score on top left corner and timer on top right corner-->
+    <header>
+        <nav id="container">
+
+            <div class="left">
+                <a onclick="displayScores()" href="#"><h4>View High Scores</h4></a>
+            </div>
+
+            <div class="right">
+                <h4>Remaining Time: <span id="timeLeft">0</span></h4>
+            </div>
+
+        </nav>
+    </header>
+
+    <!--Created a section to include quiz rules and start button-->
+    <section>
+        <div id="quiz_container">
+            <div id="main_quiz_screen">
+                <h1>Mastering Web Development: The Ultimate Challenge</h1>
+                <p>Try to answer the following questions related to web development within the time limit.</p>
+                <p>Please be aware that providing incorrect answers will result in a time penalty!</p>
+                <p> <strong> Ready to test your knowledge? Let's get started!</strong></p>
+                <p></p>
+                <button onclick="startQuiz()"> START QUIZ</button>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="assets\script.js"></script>
+
+
+</body>
+</html>
