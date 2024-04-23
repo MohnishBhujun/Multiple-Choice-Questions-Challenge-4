@@ -1,4 +1,10 @@
-//Quiz Questions Array with title, choices, and answers//
+//Creating variables
+var userScore = 0;
+var currentQuestionIndex = -1;
+var timeRemaining = 0;
+var quizTimer;
+
+//Quiz Questions Array with title, choices, and answers
 var quizQuestions = [{
     question: "What does HTML stand for?",
     options: ["Hyperlinks and Text Markup Language", "Hyper Text Markup Language", "Home Tool Markup Language", "Hyper Tool Markup Language"],
@@ -46,15 +52,8 @@ var quizQuestions = [{
 }
 ]
 
-//Variables initialization//
-var userScore = 0;
-var currentQuestionIndex = -1;
-var timeRemaining = 0;
-var quizTimer;
-
-//Function to start the quiz timer//
+//Starting the quiz
 function startQuiz() {
-
     timeRemaining = 75;
     document.getElementById("timeLeft").innerHTML = timeRemaining;
 
@@ -62,7 +61,7 @@ function startQuiz() {
         timeRemaining--;
         document.getElementById("timeLeft").innerHTML = timeRemaining;
        
-        //when the timer reaches 0, the Quiz is over//
+        //when the timer reaches 0, the Quiz is over
         if (timeRemaining <= 0) {
             clearInterval(quizTimer);
             endQuiz(); 
@@ -72,7 +71,7 @@ function startQuiz() {
     displayNextQuestion();
 }
 
-// Function to end the quiz //
+//Ending the quiz
 function endQuiz() {
     clearInterval(quizTimer);
 
@@ -86,14 +85,14 @@ function endQuiz() {
     document.getElementById("main_quiz_screen").innerHTML = quizContent;
 }
 
-// Function to save user's score in local storage //
+//Saving user's score in local storage
 function saveScore() {
     localStorage.setItem("highscore", userScore);
     localStorage.setItem("highscoreName",  document.getElementById('username').value);
     displayScores();
 }
 
-// Function to display high scores from local storage //
+//Displaying high scores from local storage
 function displayScores() {
     var highScoreContent = `
     <h2>` + localStorage.getItem("highscoreName") + `'s Highscore is:</h2>
@@ -104,14 +103,14 @@ function displayScores() {
     document.getElementById("main_quiz_screen").innerHTML = highScoreContent;
 }
 
-// Function to clear high scores from local storage //
+//Clearing high scores from local storage
 function clearScores() {
     localStorage.setItem("highscore", "");
     localStorage.setItem("highscoreName",  "");
     resetQuiz();
 }
 
-// Function to reset the quiz //
+//Resetting the quiz
 function resetQuiz() {
     clearInterval(quizTimer);
     userScore = 0;
@@ -128,7 +127,7 @@ function resetQuiz() {
     document.getElementById("main_quiz_screen").innerHTML = quizContent;
 }
 
-// Function to move to the next question //
+//Moving to the next question
 function displayNextQuestion() {
     currentQuestionIndex++;
 
@@ -147,7 +146,7 @@ function displayNextQuestion() {
     document.getElementById("main_quiz_screen").innerHTML = quizContent;
 }
 
-// Function to check the selected answer //
+//Checking the selected answer
 function checkAnswer(selectedOption) {
     var userChoice = selectedOption.textContent;
 
@@ -159,3 +158,8 @@ function checkAnswer(selectedOption) {
 
     displayNextQuestion();
 }
+
+//Starting the quiz when the page loads
+document.addEventListener("DOMContentLoaded", function() {
+    resetQuiz();
+});

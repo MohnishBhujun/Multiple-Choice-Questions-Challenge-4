@@ -72,12 +72,12 @@ a {
 }
 
 #timeLeft{
-    color: #FF00FF;
+    color: #9e379e;
 }
 
 button {
     border: none;
-    background-color: rgb(185, 127, 239);
+    background-color: rgb(134, 35, 226);
     color: white;
     border-radius: 5px;
     padding: 13px 20px 13px 20px;
@@ -88,7 +88,7 @@ button {
 
 button:hover {
     transition-duration: 0.4s;
-    background-color:rgb(185, 127, 239);
+    background-color:rgb(118, 52, 184);
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
